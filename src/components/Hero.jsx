@@ -1,6 +1,6 @@
 import { FaPlay } from "react-icons/fa";
 import heroPlant from "../assets/images/heroPlant.png";
-
+import plantBackground from "../assets/images/plant-background.png";
 
 const Hero = () => {
   return (
@@ -93,9 +93,18 @@ const Hero = () => {
 
       {/* CENTER BIG PLANT IMAGE */}
       <img
-        src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=1200&auto=format&fit=crop"
+        src={plantBackground}
         alt="background plant"
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[720px] opacity-55"
+        className="
+          absolute 
+          bottom-0 
+          left-1/2 
+          -translate-x-1/2 
+          w-[720px] 
+          opacity-55
+          pointer-events-none
+          select-none
+        "
       />
 
       {/* REVIEW CARD */}

@@ -7,6 +7,15 @@ import ReviewCard from "./components/ReviewCard";
 import BestO2 from "./components/BestO2";
 import Footer from "./components/Footer";
 
+import plantLeft from "./assets/images/plant-left.png";
+import plantRight from "./assets/images/plant-right.png";
+
+import heroPlant from "./assets/images/heroPlant.png";
+import cactusPlant from "./assets/images/cactus-plant.png";
+import monsteraPlant from "./assets/images/monstera-plant.png";
+import leafPlant from "./assets/images/leaf-plant.png";
+import aloePlant from "./assets/images/aloe-plant.png";
+
 function App() {
   return (
     <div className="min-h-screen bg-[#081207] overflow-hidden">
@@ -14,12 +23,13 @@ function App() {
       {/* Main Container */}
       <div className="max-w-[1350px] mx-auto px-6">
 
+        {/* Navbar */}
         <Navbar />
 
-        {/* Hero Section */}
+        {/* Hero */}
         <Hero />
 
-        {/* Trending Plants Section */}
+        {/* Trending Plants */}
         <section className="py-28">
 
           <SectionTitle title="Our Trendy plants" />
@@ -29,13 +39,13 @@ function App() {
             <FeatureCard
               title="For Small Decs Ai Plat"
               price="Rs. 599/-"
-              image="https://pngimg.com/d/house_plant_PNG27.png"
+              image={plantLeft}
             />
 
             <FeatureCard
               title="For Fresh Decs Ai Plat"
               price="Rs. 579/-"
-              image="https://pngimg.com/d/small_plant_PNG69.png"
+              image={plantRight}
               reverse
             />
 
@@ -43,7 +53,7 @@ function App() {
 
         </section>
 
-        {/* Top Selling Section */}
+        {/* Top Selling */}
         <section className="py-32">
 
           <SectionTitle title="Our Top Selling" />
@@ -51,38 +61,38 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-16">
 
             <ProductCard
-              image="https://pngimg.com/d/house_plant_PNG25.png"
+              image={heroPlant}
               title="Calathea plant"
               price="Rs. 359/-"
             />
 
             <ProductCard
-              image="https://pngimg.com/d/house_plant_PNG27.png"
+              image={plantLeft}
               title="Calathea plant"
               price="Rs. 359/-"
             />
 
             <ProductCard
-              image="https://pngimg.com/d/cactus_PNG23680.png"
-              title="Calathea plant"
+              image={cactusPlant}
+              title="Cactus plant"
               price="Rs. 359/-"
             />
 
             <ProductCard
-              image="https://pngimg.com/d/house_plant_PNG33.png"
-              title="Calathea plant"
+              image={monsteraPlant}
+              title="Indoor plant"
               price="Rs. 359/-"
             />
 
             <ProductCard
-              image="https://pngimg.com/d/small_plant_PNG69.png"
-              title="Calathea plant"
+              image={leafPlant}
+              title="Small plant"
               price="Rs. 359/-"
             />
 
             <ProductCard
-              image="https://pngimg.com/d/house_plant_PNG40.png"
-              title="Calathea plant"
+              image={aloePlant}
+              title="Leaf plant"
               price="Rs. 359/-"
             />
 
@@ -90,7 +100,7 @@ function App() {
 
         </section>
 
-        {/* Customer Review Section */}
+        {/* Customer Review */}
         <section className="py-32">
 
           <SectionTitle title="Customer Review" />
@@ -115,16 +125,19 @@ function App() {
           </div>
 
         </section>
+
+        {/* Best O2 */}
         <SectionTitle title="Our Best O2" />
+
         <BestO2 />
 
-
       </div>
+
+      {/* Footer */}
       <Footer />
+
     </div>
-    
   );
 }
-
 
 export default App;

@@ -1,98 +1,126 @@
-import { RiShoppingBagLine, RiArrowRightLine } from 'react-icons/ri'
-import { PlantCard1, PlantCard2, PlantCard3, PlantCard4 } from '../assets/PlantIllustrations'
-import { useInView } from '../hooks/useInView'
+import { RiShoppingBagLine } from "react-icons/ri";
+import { useInView } from "../hooks/useInView";
 
 const PRODUCTS = [
   {
     id: 1,
-    Plant: PlantCard1,
-    badge: 'For Small Decs',
-    name: 'AI Plat',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-    price: 'Rs. 599/-',
-    bg: 'from-dark-300 to-dark-400',
-    accent: '#4CAF50',
+    image: "/plant-left.png",
+    badge: "For Small Decs",
+    name: "AI Plant",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: "Rs. 599/-",
+    accent: "#4CAF50",
   },
   {
     id: 2,
-    Plant: PlantCard2,
-    badge: 'For Small Decs',
-    name: 'Cactus Gem',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-    price: 'Rs. 499/-',
-    bg: 'from-dark-300 to-dark-400',
-    accent: '#FF8A65',
+    image: "/plant-right.png",
+    badge: "For Fresh Decs",
+    name: "Cactus Gem",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: "Rs. 579/-",
+    accent: "#66BB6A",
   },
-]
+];
 
 export default function TrendyPlants() {
-  const { ref, inView } = useInView()
+  const { ref, inView } = useInView();
 
   return (
-    <section id="plant-types" ref={ref} className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-0 w-1/2 h-3/4"
-          style={{ background: 'radial-gradient(ellipse 60% 60% at 0% 100%, rgba(76,175,80,0.06) 0%, transparent 70%)' }} />
-      </div>
-
+    <section
+      id="plant-types"
+      ref={ref}
+      className="py-20 relative overflow-hidden"
+    >
       <div className="container-main relative z-10">
-        {/* Header */}
-        <div className={`mb-14 text-center transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-xs font-mono text-green-light tracking-widest uppercase mb-3">Collection</p>
-          <h2 className="section-title">Our Trendy <span className="text-green-light">Plants</span></h2>
+
+        {/* TITLE */}
+        <div
+          className={`mb-14 text-center transition-all duration-700 ${
+            inView
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
+          }`}
+        >
+          <h2 className="text-4xl sm:text-5xl font-bold text-white">
+            Our Trendy <span className="text-green-400">plants</span>
+          </h2>
         </div>
 
-        {/* Product cards — signature concave shape */}
-        <div className="grid sm:grid-cols-2 gap-6">
-          {PRODUCTS.map(({ id, Plant, badge, name, desc, price, accent }, i) => (
+        {/* CARDS */}
+        <div className="flex flex-col gap-10">
+
+          {PRODUCTS.map((product, i) => (
             <div
-              key={id}
-              className={`relative overflow-hidden transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              key={product.id}
+              className={`relative overflow-hidden flex flex-col md:flex-row items-center justify-between p-10 transition-all duration-700 ${
+                inView
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
               style={{
                 transitionDelay: `${i * 150}ms`,
-                borderRadius: '56px',
-                background: 'linear-gradient(135deg, #1A2B1C 0%, #132015 100%)',
-                border: '1px solid rgba(76,175,80,0.15)',
-              }}>
+                borderRadius: "56px",
+                background: "rgba(255,255,255,0.03)",
+                border: "1px solid rgba(255,255,255,0.15)",
+                backdropFilter: "blur(12px)",
+              }}
+            >
 
-              {/* Top concave arch — signature design element */}
-              <div className="relative h-52 sm:h-64 overflow-hidden flex items-end justify-center"
-                style={{
-                  background: `radial-gradient(ellipse 80% 90% at 50% 110%, rgba(76,175,80,0.15), transparent)`,
-                  borderBottom: '1px solid rgba(76,175,80,0.1)',
-                }}>
-                {/* Concave cutout effect */}
-                <div className="absolute top-0 left-0 right-0 h-16"
-                  style={{
-                    background: 'linear-gradient(to bottom, rgba(13,27,14,0.8), transparent)',
-                  }} />
-                <Plant className="h-44 sm:h-56 w-auto relative z-10 drop-shadow-xl" />
+              {/* IMAGE */}
+              <div className="flex-1 flex justify-center">
+
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-[260px] sm:w-[320px] object-contain"
+                />
+
               </div>
 
-              {/* Content */}
-              <div className="px-8 pb-8 pt-5">
-                <p className="text-[10px] font-mono tracking-widest uppercase mb-1" style={{ color: accent }}>
-                  {badge}
+              {/* CONTENT */}
+              <div className="flex-1 text-center md:text-left mt-8 md:mt-0">
+
+                <p
+                  className="text-sm uppercase tracking-widest mb-2"
+                  style={{ color: product.accent }}
+                >
+                  {product.badge}
                 </p>
-                <h3 className="text-xl font-bold text-white mb-3">{name}</h3>
-                <p className="text-sm text-white/40 leading-relaxed mb-5 max-w-xs">{desc}</p>
-                <div className="flex items-center justify-between">
-                  <p className="text-lg font-bold text-white">{price}</p>
-                  <div className="flex items-center gap-3">
-                    <span className="text-sm font-medium text-white/60 hover:text-white cursor-pointer transition-colors flex items-center gap-1">
-                      Explore <RiArrowRightLine size={14} />
-                    </span>
-                    <button className="w-10 h-10 rounded-full flex items-center justify-center text-white transition-all hover:-translate-y-0.5"
-                      style={{ background: accent }}>
-                      <RiShoppingBagLine size={16} />
-                    </button>
-                  </div>
+
+                <h3 className="text-3xl font-bold text-white mb-4">
+                  {product.name}
+                </h3>
+
+                <p className="text-white/70 leading-relaxed mb-6 max-w-md">
+                  {product.desc}
+                </p>
+
+                <h4 className="text-4xl font-bold text-white mb-6">
+                  {product.price}
+                </h4>
+
+                <div className="flex items-center gap-4 justify-center md:justify-start">
+
+                  <button className="px-6 py-3 border border-white rounded-xl text-white hover:bg-white hover:text-black transition-all">
+                    Explore
+                  </button>
+
+                  <button
+                    className="w-12 h-12 rounded-xl flex items-center justify-center text-white"
+                    style={{ background: product.accent }}
+                  >
+                    <RiShoppingBagLine size={18} />
+                  </button>
+
                 </div>
+
               </div>
+
             </div>
           ))}
+
         </div>
       </div>
     </section>
-  )
+  );
 }

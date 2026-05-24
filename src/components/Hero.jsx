@@ -1,4 +1,6 @@
 import { FaPlay } from "react-icons/fa";
+import heroPlant from "../assets/images/heroPlant.png";
+
 
 const Hero = () => {
   return (
@@ -54,7 +56,7 @@ const Hero = () => {
           <div className="w-[360px] h-[460px] rounded-[60px] border border-white/10 bg-white/5 backdrop-blur-md p-8 shadow-2xl">
 
             <img
-              src="https://png.pngtree.com/png-clipart/20231003/original/pngtree-potted-plant-decoration-png-image_13237035.png"
+              src={heroPlant}
               alt="plant"
               className="w-[260px] mx-auto ml-6 -mt-10"
             />

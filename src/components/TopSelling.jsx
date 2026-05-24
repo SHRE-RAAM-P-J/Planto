@@ -2,6 +2,7 @@ import { RiShoppingBagLine, RiHeartLine, RiStarFill } from 'react-icons/ri'
 import { PlantCard1, PlantCard2, PlantCard3, PlantCard4 } from '../assets/PlantIllustrations'
 import { useInView } from '../hooks/useInView'
 
+
 const TOP_PRODUCTS = [
   { id: 1, Plant: PlantCard1, name: 'Calathea plant', price: 'Rs. 359/-', rating: 4.8, tag: 'Bestseller', tagColor: '#4CAF50' },
   { id: 2, Plant: PlantCard3, name: 'Calathea plant', price: 'Rs. 359/-', rating: 4.5, tag: 'New', tagColor: '#66BB6A' },

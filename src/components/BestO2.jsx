@@ -1,3 +1,5 @@
+import heroPlant from "../assets/images/heroPlant.png";
+
 const BestO2 = () => {
   return (
     <section className="py-32">
@@ -23,7 +25,7 @@ const BestO2 = () => {
           <div className="flex-1 flex justify-center">
 
             <img
-              src="https://pngimg.com/d/house_plant_PNG25.png"
+              src={heroPlant}
               alt="plant"
               className="w-[350px] lg:w-[450px] object-contain"
             />
@@ -33,7 +35,7 @@ const BestO2 = () => {
           {/* Content */}
           <div className="flex-1">
 
-            <h2 className="text-4xl lg:text-5xl font-semibold leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-semibold leading-tight text-white">
               We Have Small And Best O2 Plants Collection’s
             </h2>
 
